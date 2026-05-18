@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products — ShopHub</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">ShopHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cart-count">0</span></a>
+    </div>
+  </nav>
+
+  <main style="max-width:1200px; margin:2rem auto; padding:0 1.5rem;">
+    <div style="display:flex; gap:1rem; align-items:center; margin-bottom:2rem; flex-wrap:wrap;">
+      <input type="text" id="search-input" placeholder="Search products..." style="padding:.6rem 1rem; border:1px solid var(--border); border-radius:8px; font-size:.95rem; flex:1; min-width:200px;"/>
+      <select id="category-filter" style="padding:.6rem 1rem; border:1px solid var(--border); border-radius:8px; font-size:.95rem;">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="accessories">Accessories</option>
+        <option value="clothing">Clothing</option>
+        <option value="sports">Sports</option>
+        <option value="home">Home</option>
+      </select>
+    </div>
+    <div id="product-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:1.5rem;"></div>
+  </main>
+
+  <div class="toast" id="toast">✅ Added to cart!</div>
+  <footer><p>© 2025 ShopHub. All rights reserved.</p></footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
