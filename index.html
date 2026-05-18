@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopHub — Online Store</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
 </head>
 <body>
-    
+
+  <!-- Navbar: sticky top navigation with logo, links and cart icon -->
+  <nav>
+    <a href="index.html" class="nav-logo">ShopHub</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cart-count">0</span></a>
+    </div>
+  </nav>
+
+  <!-- Hero: main banner with call-to-action buttons -->
+  <section class="hero">
+    <h1>Welcome to ShopHub</h1>
+    <p>Discover the best products at unbeatable prices</p>
+    <a href="products.html" class="btn btn-primary">Shop Now</a>
+    <a href="#featured" class="btn btn-outline">Explore</a>
+  </section>
+
+  <!-- Featured Products: dynamically rendered by app.js -->
+  <section id="featured" style="max-width:1200px; margin:3rem auto; padding:0 1.5rem;">
+    <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;">Featured Products</h2>
+    <div id="product-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:1.5rem;"></div>
+  </section>
+
+  <!-- Toast notification for add to cart feedback -->
+  <div class="toast" id="toast">✅ Added to cart!</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ShopHub. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts: products data, cart logic, app logic -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
