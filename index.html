@@ -12,6 +12,10 @@
   <!-- Navbar: sticky top navigation with logo, links and cart icon -->
   <nav>
     <a href="index.html" class="nav-logo">ShopHub</a>
+    <!-- Hamburger button for mobile -->
+<button class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+  <span></span><span></span><span></span>
+</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
@@ -20,6 +24,8 @@
     <div class="nav-right">
       <a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cart-count">0</span></a>
     </div>
+
+  
   </nav>
 
   <!-- Hero: main banner with call-to-action buttons -->
