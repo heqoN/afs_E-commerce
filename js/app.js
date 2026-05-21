@@ -80,3 +80,10 @@ function sortProducts(order) {
 document.getElementById('sort-select')?.addEventListener('change', function () {
   sortProducts(this.value);
 });
+
+// Highlight active nav link based on current page
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
