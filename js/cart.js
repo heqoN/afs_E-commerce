@@ -61,3 +61,13 @@ function clearCart() {
   saveCart();
   updateCartCount();
 }
+
+// Get total number of items in cart
+function getCartItemCount() {
+  return cart.reduce((sum, item) => sum + item.quantity, 0);
+}
+
+// Get cart item by product id
+function getCartItem(productId) {
+  return cart.find(item => item.id === productId) || null;
+}
