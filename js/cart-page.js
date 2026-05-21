@@ -58,3 +58,12 @@ function renderCartPage() {
 
 // Render cart on page load
 renderCartPage();
+
+// Re-render cart page after every removeFromCart or updateQuantity
+// to keep the UI in sync with cart state
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+  if (document.getElementById('cart-items')) {
+    renderCartPage();
+  }
+});
