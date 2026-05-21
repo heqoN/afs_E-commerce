@@ -29,16 +29,12 @@
   <span style="background:#2563eb; color:white; padding:4px 10px; border-radius:8px; font-weight:700; font-size:1.1rem; letter-spacing:2px;">AFS</span>
   <span style="color:#2563eb; font-weight:700; font-size:1.1rem; margin-left:6px;">Store</span>
 </a>
-<button class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
-  <span></span><span></span><span></span>
-</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="cart.html">Cart</a></li>
     </ul>
     <div class="nav-right">
-       <!-- Dark mode toggle -->
        <button class="dark-toggle" onclick="toggleDark()">🌙</button>
       <a href="cart.html" class="cart-icon">🛒 <span class="cart-count" id="cart-count">0</span></a>
     </div>
@@ -56,12 +52,22 @@
         <option value="home">Home</option>
       </select>
       
-      <!-- Sort dropdown -->
       <select id="sort-select" style="padding:.6rem 1rem; border:1px solid var(--border); border-radius:8px; font-size:.95rem;">
         <option value="">Sort by Price</option>
         <option value="asc">Price: Low to High</option>
         <option value="desc">Price: High to Low</option>
       </select>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+      <label style="font-size:.9rem; color:var(--text-secondary); white-space:nowrap;">Price range:</label>
+      <input type="range" id="price-min" min="0" max="900" value="0" step="10"
+        style="flex:1; min-width:120px; accent-color:var(--primary);"
+        oninput="updatePriceLabel(); filterProducts();" />
+      <input type="range" id="price-max" min="0" max="900" value="900" step="10"
+        style="flex:1; min-width:120px; accent-color:var(--primary);"
+        oninput="updatePriceLabel(); filterProducts();" />
+      <span id="price-label" style="font-size:.9rem; font-weight:600; color:var(--primary); white-space:nowrap; min-width:110px;">$0 — $900</span>
     </div>
 
     <p id="product-count" style="font-size:0.85rem; color:#64748b; margin-bottom:1rem;"></p>

@@ -37,22 +37,28 @@ function updateProductCount(list) {
   if (countEl) countEl.textContent = `${list.length} product(s) found`;
 }
 
-// Filter products based on search input and selected category
+// Update the price range label
+function updatePriceLabel() {
+  const min = parseInt(document.getElementById('price-min')?.value || 0);
+  const max = parseInt(document.getElementById('price-max')?.value || 900);
+  const label = document.getElementById('price-label');
+  if (label) label.textContent = `$${min} — $${max}`;
+}
+
+// Filter products based on search input, selected category and price range
 function filterProducts() {
-  // Get current search term (lowercase for case-insensitive match)
   const search = document.getElementById('search-input')?.value.toLowerCase() || '';
-
-  // Get selected category
   const category = document.getElementById('category-filter')?.value || 'all';
+  const minPrice = parseInt(document.getElementById('price-min')?.value || 0);
+  const maxPrice = parseInt(document.getElementById('price-max')?.value || 900);
 
-  // Filter products array based on both criteria
   const filtered = products.filter(p => {
     const matchSearch = p.name.toLowerCase().includes(search) || p.description.toLowerCase().includes(search);
     const matchCategory = category === 'all' || p.category === category;
-    return matchSearch && matchCategory;
+    const matchPrice = p.price >= minPrice && p.price <= maxPrice;
+    return matchSearch && matchCategory && matchPrice;
   });
 
-  // Re-render with filtered results
   renderProducts(filtered);
 }
 
