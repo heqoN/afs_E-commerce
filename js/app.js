@@ -6,6 +6,9 @@ function renderProducts(list) {
   const grid = document.getElementById('product-grid');
   if (!grid) return;
 
+  // Update product count
+  updateProductCount(list);
+
   // If no products match, show a message
   if (list.length === 0) {
     grid.innerHTML = '<p style="color:var(--text-secondary); grid-column:1/-1;">No products found.</p>';
@@ -26,6 +29,12 @@ function renderProducts(list) {
       </div>
     </div>
   `).join('');
+}
+
+// Update product count display based on filtered results
+function updateProductCount(list) {
+  const countEl = document.getElementById('product-count');
+  if (countEl) countEl.textContent = `${list.length} product(s) found`;
 }
 
 // Filter products based on search input and selected category
