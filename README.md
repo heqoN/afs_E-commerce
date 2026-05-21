@@ -1,4 +1,4 @@
-# ShopHub — E-Commerce Website
+# AFS Store — E-Commerce Website
 
 A responsive e-commerce website built with HTML, CSS, and JavaScript.
 
@@ -10,6 +10,7 @@ A responsive e-commerce website built with HTML, CSS, and JavaScript.
 - Quantity update and item removal
 - Toast notifications
 - Responsive mobile design
+- Price Range
 
 ## Pages
 - `index.html` — Home page with featured products
