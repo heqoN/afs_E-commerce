@@ -67,3 +67,16 @@ renderProducts(products);
 
 // Update cart badge on page load
 updateCartCount();
+
+// Sort products by price (low to high)
+function sortProducts(order) {
+  const sorted = [...products].sort((a, b) => {
+    return order === 'asc' ? a.price - b.price : b.price - a.price;
+  });
+  renderProducts(sorted);
+}
+
+// Listen for sort dropdown changes
+document.getElementById('sort-select')?.addEventListener('change', function () {
+  sortProducts(this.value);
+});
