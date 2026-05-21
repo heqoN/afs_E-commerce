@@ -54,3 +54,10 @@ function showToast() {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
+
+// Clear all items from the cart
+function clearCart() {
+  cart = [];
+  saveCart();
+  updateCartCount();
+}
