@@ -10,7 +10,7 @@ A responsive e-commerce website built with HTML, CSS, and JavaScript.
 - Quantity update and item removal
 - Toast notifications
 - Responsive mobile design
-- Price Range
+- Price range
 
 ## Pages
 - `index.html` — Home page with featured products
